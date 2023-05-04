@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-new',
@@ -6,21 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new.component.css']
 })
 export class NewComponent implements OnInit {
-constructor(){}
+
+  uname:any
+  psw:any
+
+constructor(private ds: DataService ){}
 ngOnInit(): void {
   
 }
+
+
 login(){
-  alert("user logined")
+
+console.log(this.uname);
+alert(this.ds.checkData())
+
 }
-
-unamechange(event:any){
-  console.log(event.target.value);
-  
-}
-
-
-
-
 
 }
